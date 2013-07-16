@@ -1,7 +1,7 @@
 dummyimage
 ==========
 
-Uses [http://dummyimage.com](http://dummyimage.com) to retrieve a specific number of random images within a certain range of dimensions, containing a specified label. This is useful for generating placeholder images for website development.
+Uses [http://dummyimage.com](http://dummyimage.com) to retrieve a set of placeholder images. You tell the script how many images to generate, the minimum and maximum dimensions, what the title overlay should be, and what filetype to generate (png, jpg, gif), and the script creates uniquely colored, sized, and labeled placeholder images. You can also choose to automatically include the dimensions in the title overlay.
 
 ## Tips
 * If you need images that are at an exact dimension, use the same min/max values. (e.g., `--min 100x100 --max 100x100`)

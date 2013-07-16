@@ -6,9 +6,7 @@ import urllib2
 import sys
 
 parser = argparse.ArgumentParser(description="Uses http://dummyimage.com to \
-    retrieve a specific number of random images within a certain range of \
-    dimensions, containing a specified label. This is useful for generating \
-    placeholder images for website development.")
+    to retrieve a set of placeholder images. View README.md for more info.")
 
 parser.add_argument("-i", "--include-dimensions", dest="dimensionsInTitle",
     default=False, action="store_true",
