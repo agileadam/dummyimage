@@ -30,7 +30,8 @@ parser.add_argument("-n", "--num", type=int, dest="numImages", required=True,
 
 parser.add_argument("-p", "--prefix", dest="prefix", required=True,
     help="Prefix for the images' text overlay. Use Alphas, Numbers, Spaces, \
-    Underscores, and Hyphens only.", metavar="PREFIX")
+    Underscores, Spaces, and Hyphens only. Wrap with quotation marks!",
+    metavar="\"PREFIX\"")
 
 args = parser.parse_args()
 
@@ -53,12 +54,13 @@ while i < args.numImages:
     fgcolor = "%02X%02X%02X" % (r(),r(),r())
     width = random.randint(minWidth, maxWidth)
     height = random.randint(minHeight, maxHeight)
+    prefix = args.prefix.replace(" ", "+")
     dimensionsTitle = "" 
     if args.dimensionsInTitle:
         # The character here is not an X, it's a multiplication sign
         dimensionsTitle = "+" + str(width) + "×" + str(height)
     url = "http://dummyimage.com/%dx%d/%s/%s.%s&text=%s+%d%s" % (width,
-        height, bgcolor, fgcolor, args.filetype, args.prefix, i,
+        height, bgcolor, fgcolor, args.filetype, prefix, i,
         dimensionsTitle)
     r = urllib2.urlopen(url)
     print "Retrieving", i, "of", args.numImages, ":", url
